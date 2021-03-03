@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+/*
+
+・テキストの中央ぞろえ
+text-align: center;
+
+・要素の右揃え・左揃え
+float: left(right);
+
+ただし，回り込みが発生してしまうことがあるので，
+回り込みが発生している要素に対して
+clear: left(right);
+と指定する．
+
+・Flex Boxを使った要素の右揃え・左揃え
+親要素にたいして
+display: flex;
+justify-content: flex-start, flex-end, space-around(evenly)(between)など．
+
+*/
+body {
+  font-family: "Lora", filicudi-solid, Meiryo, "Hiragino Kaku Gothic Pro N", sans-serif;
+  color: #222;
+  width: 100%;
+  /* padding: 20px; */
+  margin: 0;
+  font-size: 16px;
+  background-color: rgb(236, 236, 236);
+}
+li {
+  list-style-type: none;
+}
+a:visited, a:active, a:link, a:hover {
+  color: #333;
+  text-decoration: none;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.center {
+  margin: 0 auto;
+}
+.stdwidth {
+  width: 978px;
+}
+.section-title, .site-title-char {
+  font-family: filicudi-solid, "Lora";
+  font-size: 40px;
+  line-height: 40px;
+}
+.m-bottom {
+  margin-bottom: 200px;
+}
+.desc {
+  line-height: 1.5;
+}
+
+/* HEADER */
+.header {
+  padding: 20px 0;
+}
+.site-title {
+  display: flex;
+  align-content: center;
+  margin: 0 20px;
+  height: 60px;
+}
+.site-logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+.site-title-char {
+  font-size: 40px;
+  line-height: 40px;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 1px;
+}
+.fl-as-center {
+  align-self: center;
+}
+.global-nav {
+  width: 500px;
+  margin: 0 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list-item {
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgb(236, 236, 236);
+
+  transition: all 0.3s;
+}
+.list-item:hover {
+  opacity: 0.7;
+}
+
+/* グローバルナビゲーションのリストに下線をふわっと、中央から左右にひきたかった。けど、なんか失敗してお蔵入りになったので放置。いつかやる。2021.03.03 */
+/* .list-item::after {
+  content: '';
+  display: block;
+  width: 0;
+  border-bottom: 1px solid #111;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+.list-item::after:hover {
+  width: 100%;
+} */
+
+/* TOP */
+.TOP {
+  width: 100%;
+  height: 500px;
+  text-align: center;
+
+  background-color: rgb(51,51,51);
+}
+
+/* ABOUT */
+.about-wrapper {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+.name {
+  margin-top: 0;
+}
+
+/* SKILLS */
+.skills-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 70px;
+}
+.skill-box {
+  width: 200px;
+  text-align: center;
+}
+.skill-box > img {
+  margin-bottom: 10px;
+}
+
+
+
+/* WORKS */
+/* 978 / 3 = 326
+   326 - 5(margin分) = 321 
+   */
+/* よっつならカード1枚244px, margin-leftで7px使うけど，244に入っているのでマージンも考慮する */
+.works-wrapper {
+  width: 976px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.work-box {
+  /* 244px使える, margin-leftも考えて7px, よって237pxぐらい */
+  width: 24.28%;
+  margin: 0 0 7px 7px;
+  border-radius: 3px;
+}
+.work-box > img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px;
+  
+}
+.works-desc {
+  line-height: 1.5;
+  height: auto;
+  margin: 0;
+  padding: 10px;
+  background-color: #fff;
+}
+.test {
+  border: 1px solid #111;
+}
+/* CONTACT */
+.contact-wrapper {
+  display: flex;
+  justify-content: space-between
+}
+.contact-right {
+  width: 50%;
+}
+.contact-input {
+  padding: 10px;
+  width: 400px;
+}
+.contact-button {
+  display: block;
+  width: 250px;
+  height: 50px;
+  margin: 30px auto 0;
+
+  color: #333;
+  font-family: filicudi-solid, Meiryo, "Hiragino Kaku Gothic Pro N", sans-serif;
+  letter-spacing: 1px; 
+  font-size: 25px;
+  border: none;
+  background-color: #f79097;
+  border-radius: 2px;
+  box-shadow: 0 5px #999;
+  outline: 0;
+
+  transition: opacity 0.2s;
+}
+.contact-button:hover {
+  opacity: 0.8;
+}
+.contact-button:active {
+  position: relative;
+  top: 5px;
+  box-shadow: none;
+}
+
+
+/* FOOTER */
+.footer {
+  width: 100%;
+  color: #ccc;
+  background-color: #222;
+  padding: 50px 0 100px;
+}
+.footer-wrapper {
+  width: 978px;
+  margin: 0 auto;
+}
+.copyright {
+  line-height: 60px;
+}
